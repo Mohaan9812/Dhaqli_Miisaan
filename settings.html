@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings - FinanceTracker</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/settings.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="app-body">
+
+    <div class="app-container">
+        <!-- Sidebar (Reused) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-wallet text-primary fa-lg"></i>
+                    <span class="font-bold text-lg ml-2">FinanceTracker</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">Finance Manager</div>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="settings.html" class="nav-item active">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button onclick="api.logout()" class="nav-item text-danger w-full" style="background:none;">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <a href="dashboard.html" class="icon-btn hide-desktop"><i class="fa-solid fa-chevron-left"></i></a>
+                <h2 class="page-title text-center" style="flex:1;">Profile & Settings</h2>
+                <div class="header-actions hide-mobile">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=User&background=random" alt="User" class="avatar-sm">
+                    </div>
+                </div>
+            </header>
+
+            <div class="settings-container">
+                <!-- Profile Header -->
+                <div class="profile-section">
+                    <div class="avatar-container">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random&size=120" alt="Profile" class="avatar-large" id="profile-img">
+                        <div class="edit-avatar-btn"><i class="fa-solid fa-pencil fa-xs"></i></div>
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="user-name">John Doe</h1>
+                        <p id="user-email">john.doe@email.com</p>
+                    </div>
+                </div>
+
+                <!-- Security Section -->
+                <div class="settings-group">
+                    <span class="settings-label">Security</span>
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="settings-icon" style="background: #eef2ff; color: #6366f1;"><i class="fa-solid fa-fingerprint"></i></div>
+                            <div class="settings-text">
+                                <span class="settings-title">Biometric Security</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-icon" style="background: #fffbeb; color: #f59e0b;"><i class="fa-solid fa-bell"></i></div>
+                            <div class="settings-text">
+                                <span class="settings-title">Notifications</span>
+                            </div>
+                            <div class="settings-action"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="settings-group">
+                    <span class="settings-label">Preferences</span>
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="settings-icon" style="background: #ecfdf5; color: #10b981;"><i class="fa-solid fa-money-bill"></i></div>
+                            <div class="settings-text">
+                                <span class="settings-title">Currency</span>
+                            </div>
+                            <div class="settings-action">USD <i class="fa-solid fa-chevron-right ml-2"></i></div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-icon" style="background: #eef2ff; color: #6366f1;"><i class="fa-solid fa-sun"></i></div>
+                            <div class="settings-text">
+                                <span class="settings-title">Dark Mode</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="dark-mode-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management -->
+                <div class="settings-group">
+                    <span class="settings-label">Data Management</span>
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="settings-icon" style="background: #eff6ff; color: #3b82f6;"><i class="fa-solid fa-file-export"></i></div>
+                            <div class="settings-text">
+                                <span class="settings-title">Export Data</span>
+                                <span class="settings-subtitle">CSV, PDF formats available</span>
+                            </div>
+                            <div class="settings-action"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Log Out -->
+                <div class="logout-btn-container">
+                    <button class="btn-logout" onclick="api.logout()">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Log Out
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="mobile-nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Overview</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Budget</span>
+        </a>
+        <a href="analytics.html" class="mobile-nav-item">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>Stats</span>
+        </a>
+        <a href="settings.html" class="mobile-nav-item active">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = api.getUser();
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Fill user info
+            document.getElementById('user-email').innerText = user.email;
+            document.getElementById('user-name').innerText = user.email.split('@')[0];
+            document.getElementById('profile-img').src = `https://ui-avatars.com/api/?name=${user.email}&background=random&size=120`;
+
+            // Dark Mode Simple Implementation
+            const darkToggle = document.getElementById('dark-mode-toggle');
+            darkToggle.addEventListener('change', () => {
+                if(darkToggle.checked) {
+                    document.body.classList.add('dark-theme');
+                    // In a real app, you'd add dark theme variables to :root
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

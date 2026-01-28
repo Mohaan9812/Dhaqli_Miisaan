@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTracker - Dashboard</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <!-- FontAwesome for Icons (using CDN for simplicity) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="app-body">
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-wallet text-primary fa-lg"></i>
+                    <span class="font-bold text-lg ml-2">ExpenseTracker</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">Finance Manager</div>
+                <a href="dashboard.html" class="nav-item active">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item text-danger">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <h2 class="page-title">Dashboard</h2>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                    <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=User+Name&background=random" alt="User"
+                            class="avatar-sm">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-grid">
+
+                <!-- Stats Row -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Balance</span>
+                            <i class="fa-solid fa-building-columns text-primary"></i>
+                        </div>
+                        <div class="stat-value">$4,250.00</div>
+                        <div class="stat-trend positive">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <span>+5.2%</span> <span class="text-gray text-sm">from last month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Income</span>
+                            <i class="fa-solid fa-arrow-down text-success"></i>
+                            <!-- Arrow down generally implies incoming to account -->
+                        </div>
+                        <div class="stat-value">$6,100.00</div>
+                        <div class="stat-trend positive">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <span>+12.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Expenses</span>
+                            <i class="fa-solid fa-arrow-up text-danger"></i>
+                        </div>
+                        <div class="stat-value">$1,850.00</div>
+                        <div class="stat-trend negative">
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+                            <span>-2.4%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Layout: Form & List -->
+                <div class="content-split">
+                    <!-- Add Transaction Form -->
+                    <div class="card form-card">
+                        <h3>Add New Transaction</h3>
+                        <p class="text-gray text-sm mb-4">Track your daily income or expenses</p>
+
+                        <form id="add-transaction-form">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                <div class="input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" placeholder="0.00" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="form-input">
+                                        <option>Select category</option>
+                                        <option>Salary</option>
+                                        <option>Food & Dining</option>
+                                        <option>Rent</option>
+                                        <option>Utilities</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="date" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Description (Optional)</label>
+                                <textarea rows="3" placeholder="e.g. Weekly grocery shopping"
+                                    class="form-input"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-full">Add Transaction</button>
+                        </form>
+                    </div>
+
+                    <!-- Recent Transactions -->
+                    <div class="card transactions-card">
+                        <div class="card-header flex justify-between items-center mb-4">
+                            <h3>Recent Transactions</h3>
+                            <a href="#" class="text-primary text-sm font-semibold">View All</a>
+                        </div>
+                        <p class="text-gray text-sm mb-4">Your latest financial activity</p>
+
+                        <div class="transactions-list">
+                            <!-- Transaction Item -->
+                            <div class="transaction-item">
+                                <div class="tx-icon bg-green-light text-success">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                </div>
+                                <div class="tx-details">
+                                    <strong>Monthly Salary</strong>
+                                    <span class="text-xs text-gray">Income • Oct 28, 2023</span>
+                                </div>
+                                <div class="tx-amount text-success">+$4,500.00</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="tx-icon bg-red-light text-danger">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div class="tx-details">
+                                    <strong>Organic Grocery Store</strong>
+                                    <span class="text-xs text-gray">Food & Dining • Oct 27, 2023</span>
+                                </div>
+                                <div class="tx-amount text-danger">-$124.50</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="tx-icon bg-blue-light text-info">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="tx-details">
+                                    <strong>Apartment Rent</strong>
+                                    <span class="text-xs text-gray">Housing • Oct 25, 2023</span>
+                                </div>
+                                <div class="tx-amount text-danger">-$1,200.00</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="tx-icon bg-purple-light text-purple">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </div>
+                                <div class="tx-details">
+                                    <strong>Clothing Store</strong>
+                                    <span class="text-xs text-gray">Shopping • Oct 22, 2023</span>
+                                </div>
+                                <div class="tx-amount text-danger">-$85.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- No main.js needed for this demo, logic is here -->
+    <script src="js/api.js"></script>
+    <script>
+        // Dashboard Logic
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = api.getUser();
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Load Transactions
+            await loadDashboardData();
+
+            // Handle Form Submit
+            const form = document.getElementById('add-transaction-form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const amountInput = form.querySelector('input[type="number"]');
+                    const categorySelect = form.querySelector('select');
+                    const dateInput = form.querySelector('input[type="date"]');
+                    const descInput = form.querySelector('textarea');
+
+                    const amount = amountInput.value;
+                    const category = categorySelect.value;
+                    const date = dateInput.value;
+                    const description = descInput.value;
+
+                    if (!amount || category === 'Select category') {
+                        alert('Please fill in required fields');
+                        return;
+                    }
+
+                    const type = (category === 'Salary') ? 'income' : 'expense';
+
+                    const result = await api.addTransaction({
+                        type,
+                        amount,
+                        category,
+                        description,
+                        date
+                    });
+
+                    if (result) {
+                        form.reset();
+                        await loadDashboardData();
+                    }
+                });
+            }
+        });
+
+        async function loadDashboardData() {
+            try {
+                const transactions = await api.getTransactions();
+                renderTransactions(transactions);
+                updateStats(transactions);
+            } catch (err) {
+                console.error("Failed to load data", err);
+            }
+        }
+
+        function renderTransactions(transactions) {
+            const container = document.querySelector('.transactions-list');
+            if (!container) return;
+
+            let html = `
+                <div class="card-header flex justify-between items-center mb-4">
+                    <h3>Recent Transactions</h3>
+                        <a href="#" class="text-primary text-sm font-semibold">View All</a>
+                </div>
+                <p class="text-gray text-sm mb-4">Your latest financial activity</p>
+            `;
+
+            if (transactions.length === 0) {
+                html += '<p class="text-gray text-center p-4">No transactions yet.</p>';
+            } else {
+                transactions.slice(0, 5).forEach(tx => {
+                    const isIncome = tx.type === 'income';
+                    const iconClass = getCategoryIcon(tx.category);
+                    const colorClass = isIncome ? 'text-success' : 'text-danger';
+                    const bgClass = isIncome ? 'bg-green-light' : 'bg-red-light';
+                    const sign = isIncome ? '+' : '-';
+
+                    html += `
+                        <div class="transaction-item">
+                            <div class="tx-icon ${bgClass} ${isIncome ? 'text-success' : 'text-danger'}">
+                                <i class="${iconClass}"></i>
+                            </div>
+                            <div class="tx-details">
+                                <strong>${tx.description || tx.category}</strong>
+                                <span class="text-xs text-gray">${tx.category} • ${new Date(tx.date).toLocaleDateString()}</span>
+                            </div>
+                            <div class="tx-amount ${colorClass}">${sign}$${parseFloat(tx.amount).toFixed(2)}</div>
+                        </div>
+                    `;
+                });
+            }
+            container.innerHTML = html;
+        }
+
+        function updateStats(transactions) {
+            const totalIncome = transactions.filter(t => t.type === 'income').reduce((acc, t) => acc + parseFloat(t.amount), 0);
+            const totalExpense = transactions.filter(t => t.type === 'expense').reduce((acc, t) => acc + parseFloat(t.amount), 0);
+            const balance = totalIncome - totalExpense;
+
+            const statCards = document.querySelectorAll('.stat-card');
+            if (statCards.length >= 3) {
+                statCards[0].querySelector('.stat-value').innerText = `$${balance.toFixed(2)}`;
+                statCards[1].querySelector('.stat-value').innerText = `$${totalIncome.toFixed(2)}`;
+                statCards[2].querySelector('.stat-value').innerText = `$${totalExpense.toFixed(2)}`;
+            }
+        }
+
+        function getCategoryIcon(category) {
+            const map = {
+                'Salary': 'fa-solid fa-money-bill-wave',
+                'Food & Dining': 'fa-solid fa-utensils',
+                'Rent': 'fa-solid fa-house',
+                'Housing': 'fa-solid fa-house',
+                'Utilities': 'fa-solid fa-bolt',
+                'Shopping': 'fa-solid fa-bag-shopping',
+                'Clothing Store': 'fa-solid fa-bag-shopping',
+                'Entertainment': 'fa-solid fa-film'
+            };
+            return map[category] || 'fa-solid fa-circle';
+        }
+    </script>
+</body>
+
+</html>

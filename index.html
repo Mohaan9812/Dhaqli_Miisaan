@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DakhliTracker - Personal Finance Simplified</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar container">
+        <div class="logo">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                style="width: 24px; color: var(--primary-color);">
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path fill-rule="evenodd"
+                    d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-bold text-lg">DakhliTracker</span>
+        </div>
+        <nav class="hide-mobile">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-primary">Sign Up</a>
+            <a href="login.html" class="btn btn-outline" style="border: none;">Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container flex">
+        <div class="hero-content">
+            <div class="pill">SIMPLIFIED PERSONAL FINANCE</div>
+            <h1>Take Control of Your Daily Expenses</h1>
+            <p class="text-gray text-lg mb-4">The simplest way to track your income, categorize your spending, and reach
+                your financial goals—all in one place. Stop wondering where your money went.</p>
+            <div class="hero-actions flex gap-4">
+                <a href="dashboard.html" class="btn btn-primary">Start Tracking for Free</a>
+                <a href="#" class="btn btn-outline">View Demo</a>
+            </div>
+            <div class="social-proof flex items-center gap-2 mt-4">
+                <div class="avatars flex">
+                    <div class="avatar bg-green"></div>
+                    <div class="avatar bg-blue"></div>
+                    <div class="avatar bg-orange"></div>
+                </div>
+                <span class="text-sm text-gray">Join <strong>10k+ users</strong> managing their wealth</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/dashboard-mockup-placeholder.png" alt="Dashboard Preview" class="shadow-lg rounded-lg">
+            <!-- Ideally this would be an actual image or css mockup -->
+            <div class="mockup-css">
+                <div class="mockup-header flex gap-2">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                </div>
+                <!-- Simple CSS representation of the hero image -->
+                <div class="mockup-body grid-layout">
+                    <div class="mock-card span-2"></div>
+                    <div class="mock-card"></div>
+                    <div class="mock-card"></div>
+                    <div class="mock-chart span-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works container text-center">
+        <h2>How it Works</h2>
+        <p class="text-gray mb-4">Managing your personal finances has never been this easy. Follow three simple steps to
+            financial freedom.</p>
+
+        <div class="grid-3">
+            <div class="card p-4">
+                <div class="icon-box blue-light">
+                    <!-- Icon placeholder -->
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Log Income</h3>
+                <p class="text-gray text-sm">Securely log your monthly earnings and various sources of revenue in
+                    seconds.</p>
+            </div>
+            <div class="card p-4">
+                <div class="icon-box blue-light">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Categorize Expenses</h3>
+                <p class="text-gray text-sm">Automatically categorize daily costs like food, transport, and utilities to
+                    see where money goes.</p>
+            </div>
+            <div class="card p-4">
+                <div class="icon-box blue-light">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                </div>
+                <h3>Analyze Trends</h3>
+                <p class="text-gray text-sm">View intuitive charts and reports to visualize your spending habits and
+                    save more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Everything -->
+    <section class="features container">
+        <div class="feature-box rounded-lg p-4">
+            <h2>Track Everything That Matters</h2>
+            <p class="text-gray">Custom categories built for your lifestyle</p>
+
+            <div class="grid-4 mt-4">
+                <div class="category-card">
+                    <div class="icon-sm">🍴</div>
+                    <h4>Food & Dining</h4>
+                    <span class="text-xs text-gray">Track groceries, takeout, and restaurant bills</span>
+                </div>
+                <div class="category-card">
+                    <div class="icon-sm">🚌</div>
+                    <h4>Transportation</h4>
+                    <span class="text-xs text-gray">Fuel, public transit, and car maintenance</span>
+                </div>
+                <div class="category-card">
+                    <div class="icon-sm">⚡</div>
+                    <h4>Utilities</h4>
+                    <span class="text-xs text-gray">Electricity, water, and internet monthly bills</span>
+                </div>
+                <div class="category-card">
+                    <div class="icon-sm">🎬</div>
+                    <h4>Entertainment</h4>
+                    <span class="text-xs text-gray">Movies, subscriptions, and leisure activities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="cta-section container text-center">
+        <div class="cta-box bg-primary text-white rounded-lg p-4">
+            <h2>Ready to master your finances today?</h2>
+            <p class="mb-4">Join thousands of people who have taken control of their spending and reached their savings
+                goals with DakhliTracker.</p>
+            <div class="flex justify-center gap-4">
+                <a href="dashboard.html" class="btn bg-white text-primary">Start for Free</a>
+                <a href="#" class="btn btn-outline text-white border-white">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container flex justify-between items-center py-4 mt-4 border-t">
+        <div class="logo flex items-center gap-2">
+            <span class="font-bold text-lg text-primary">DakhliTracker</span>
+            <p class="text-xs text-gray mt-4">Building the future of personal finance tracking for the modern spender.
+            </p>
+        </div>
+        <div class="links flex gap-4 text-sm text-gray">
+            <div class="col">
+                <strong>Product</strong>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+            </div>
+            <div class="col">
+                <strong>Resources</strong>
+                <a href="#">Guide</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="col">
+                <strong>Company</strong>
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
