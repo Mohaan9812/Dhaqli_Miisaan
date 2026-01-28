@@ -1,0 +1,223 @@
+/* Settings Page Styles */
+
+.settings-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.edit-avatar-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.profile-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.profile-info p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.settings-group {
+    margin-bottom: 2rem;
+}
+
+.settings-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.settings-list {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.settings-item:last-child {
+    border-bottom: none;
+}
+
+.settings-item:hover {
+    background-color: #f9fafb;
+}
+
+.settings-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.settings-text {
+    flex: 1;
+}
+
+.settings-title {
+    font-weight: 500;
+    display: block;
+}
+
+.settings-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.settings-action {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.logout-btn-container {
+    margin-top: 2rem;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fee2e2;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #fee2e2;
+}
+
+/* Mobile Bottom Nav (for mobile view like mockup) */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+}
+
+.mobile-nav-item.active {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; padding-bottom: 5rem; }
+    .mobile-nav { display: flex; }
+}
